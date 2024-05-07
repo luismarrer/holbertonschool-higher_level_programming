@@ -12,13 +12,13 @@ To run the scripts in this repository, you will need Python 3.8 or higher. Insta
 
 ## Usage
 
-To execute a Python script, you can use the following command in your terminal:
+- To execute a Python script, you can use the following command in your terminal:
 ```bash
 python3 <script-name>.py
 
-Ensure you have the necessary permissions to execute these scripts. You may need to make them executable using the following command:
-
-`chmod +x <script-name>.py`
+- Ensure you have the necessary permissions to execute these scripts. You may need to make them executable using the following command:
+```bash
+chmod +x <script-name>.py
 
 ## Author
 
