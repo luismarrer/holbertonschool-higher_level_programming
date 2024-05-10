@@ -4,3 +4,5 @@ def print_last_digit(number):
     if "9" >= last_number >= "0":
         print("{}" .format(last_number), end="")
         return last_number
+    else:
+        return 0
