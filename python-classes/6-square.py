@@ -163,19 +163,18 @@ class Square:
 
         If the size of the square is 0, it prints an empty line.
         """
-        i = 0
-        while i is not self.__position[1]:
-            print()
-            i += 1
         if self.__size == 0:
             print()
         else:
+            i = 0
+            while i is not self.__position[1]:
+                print()
+                i += 1
             for i in range(self.__size):
-                if self.__position[0] > 0:
-                    x = 0
-                    while x is not self.__position[0]:
-                        print(" ", end="")
-                        x += 1
+                x = 0
+                while x is not self.__position[0]:
+                    print(" ", end="")
+                    x += 1
                 for j in range(self.__size):
                     print("#", end="")
                 print()
