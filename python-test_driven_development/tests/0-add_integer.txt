@@ -22,4 +22,5 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 Traceback (most recent call last):
 SyntaxError: invalid syntax
 
+All works
 """
