@@ -15,17 +15,8 @@ class BaseGeometry:
         integer_validator(self, name, value): Validates that
         a parameter is a positive integer.
     """
-    def area(self):
-        """
-        Base function.
 
-        Raises:
-            Exception: Always raises an exception with the
-            message "area() is not implemented".
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
+def integer_validator(self, name, value):
         """
         Validates that a parameter is a positive integer.
 
@@ -41,3 +32,13 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
+    def area(self):
+        """
+        Base function.
+
+        Raises:
+            Exception: Always raises an exception with the
+            message "area() is not implemented".
+        """
+        raise Exception("area() is not implemented")
