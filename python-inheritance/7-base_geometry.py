@@ -16,7 +16,7 @@ class BaseGeometry:
         a parameter is a positive integer.
     """
 
-def integer_validator(self, name, value):
+    def integer_validator(self, name, value):
         """
         Validates that a parameter is a positive integer.
 
