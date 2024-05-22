@@ -1,0 +1,21 @@
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+# Test case: Adding and sorting a list of integers
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test case: Adding a negative integer and sorting
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-1, 1, 2, 3, 4, 5]
+
+# Test case: Adding a very large number and sorting
+>>> my_list.append(5000**100)
+>>> my_list.print_sorted()
+[-1, 1, 2, 3, 4, 5, 7888609052210118054117285652827862296732064351090230047702789306640625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
