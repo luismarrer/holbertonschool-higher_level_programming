@@ -47,3 +47,31 @@
 ... except Exception as e:
 ...   print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] distance must be an integer
+
+# Test case: Valid minimum positive integer value
+>>> bg.integer_validator("min_positive", 1)
+
+# Test case: Invalid type (None)
+>>> try:
+...     bg.integer_validator("none_type", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] none_type must be an integer
+
+# Test case: Large integer value
+>>> bg.integer_validator("large_int", 10**18)
+
+# Test case: Invalid type (complex number)
+>>> try:
+...     bg.integer_validator("complex_type", 3+4j)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] complex_type must be an integer
+
+# Test case: Invalid type (string number)
+
+>>> try:
+...     bg.integer_validator("string_number", "123")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] string_number must be an integer
