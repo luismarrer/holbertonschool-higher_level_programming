@@ -6,12 +6,11 @@ This module contains BaseGeometry class.
 
 class BaseGeometry:
     """
-    Base class.
+    Base class for geometry objects.
 
     Methods:
         area(self): Raises an Exception indicating
         that it is not implemented.
-
         integer_validator(self, name, value): Validates that
         a parameter is a positive integer.
     """
@@ -45,9 +44,18 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
+    Rectangle class that inherits from BaseGeometry.
+
+    Methods:
+        __init__(self, width, height): Initializes a Rectangle object with width and height.
     """
     def __init__(self, width, height):
         """
+        Initializes a Rectangle object with width and height.
+
+        Args:
+            width (int): The width of the rectangle, validated as a positive integer.
+            height (int): The height of the rectangle, validated as a positive integer.
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
