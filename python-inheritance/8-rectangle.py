@@ -42,20 +42,24 @@ class BaseGeometry:
         """
         raise Exception("area() is not implemented")
 
+
 class Rectangle(BaseGeometry):
     """
     Rectangle class that inherits from BaseGeometry.
 
     Methods:
-        __init__(self, width, height): Initializes a Rectangle object with width and height.
+        __init__(self, width, height): Initializes a
+        Rectangle object with width and height.
     """
     def __init__(self, width, height):
         """
         Initializes a Rectangle object with width and height.
 
         Args:
-            width (int): The width of the rectangle, validated as a positive integer.
-            height (int): The height of the rectangle, validated as a positive integer.
+            width (int): The width of the rectangle,
+            validated as a positive integer.
+            height (int): The height of the rectangle,
+            validated as a positive integer.
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
