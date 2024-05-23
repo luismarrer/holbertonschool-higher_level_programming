@@ -1,6 +1,4 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
-# Create an instance of BaseGeometry
 >>> a = BaseGeometry()
 
 # Check if 'a' is an instance of BaseGeometry
@@ -59,4 +57,3 @@ TypeError: age must be an integer
 >>> a.integer_validator("age", 5.54)
 Traceback (most recent call last):
 TypeError: age must be an integer
-
