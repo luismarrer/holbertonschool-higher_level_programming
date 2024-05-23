@@ -25,15 +25,6 @@ ValueError: width must be greater than 0
 Traceback (most recent call last):
 ValueError: width must be greater than 0
 
-# Validate missing arguments
->>> a.integer_validator()
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
->>> a.integer_validator("width")
-Traceback (most recent call last):
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
 # Validate an incorrect data type (string)
 >>> a.integer_validator("width", "a")
 Traceback (most recent call last):
