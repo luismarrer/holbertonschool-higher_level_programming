@@ -29,9 +29,7 @@ class Circle(Shape):
     Circle is a subclass of Shape that represents a circle.
     """
     def __init__(self, radius):
-        if radius < 0:
-            raise ValueError("Radius cannot be negative")
-        self.radius = radius
+        self.radius = abs(radius)  # Convert radius to absolute value
 
     def area(self):
         """
@@ -73,3 +71,4 @@ def shape_info(shape):
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
+
