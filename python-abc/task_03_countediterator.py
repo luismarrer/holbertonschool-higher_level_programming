@@ -10,12 +10,21 @@ class CountedIterator:
         self.iterator = iter(iterable)
         self.count = 0
 
+    def __iter__(self):
+        """
+        Return the iterator itself.
+        """
+        return self
+
     def __next__(self):
         """
         Return the next item from the iterator and increment the counter.
         Raise StopIteration when there are no more items.
         """
-        item = next(self.iterator)  # This will raise StopIteration if no items are left
+        try:
+            item = self.iterator.__next__()
+        except StopIteration:
+            raise StopIteration
         self.count += 1
         return item
 
@@ -25,8 +34,3 @@ class CountedIterator:
         """
         return self.count
 
-    def __iter__(self):
-        """
-        Return the iterator itself.
-        """
-        return self
