@@ -1,15 +1,10 @@
-"""
-"""
-
-
 from abc import ABC, abstractmethod
 import math
-
 
 class Shape(ABC):
     """
     Shape is an abstract class that defines the blueprint
-    for geometric shapes. it includes abstract methods for
+    for geometric shapes. It includes abstract methods for
     calculating the area and perimeter.
     """
     @abstractmethod
@@ -17,7 +12,7 @@ class Shape(ABC):
         """
         Abstract method to calculate the area
         of the shape.
-        Must be implemented be subclasses.
+        Must be implemented by subclasses.
         """
         pass
 
@@ -31,9 +26,11 @@ class Shape(ABC):
 
 class Circle(Shape):
     """
-    Circle is a subclass os Shape that reprensents a Circle.
+    Circle is a subclass of Shape that represents a circle.
     """
     def __init__(self, radius):
+        if radius < 0:
+            raise ValueError("Radius cannot be negative")
         self.radius = radius
 
     def area(self):
