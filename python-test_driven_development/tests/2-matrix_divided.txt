@@ -51,3 +51,7 @@ TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' an
 >>> matrix = [[4, 5, 0]]
 >>> matrix_divided(matrix, 1)
 [[4.0, 5.0, 0.0]]
+>>> matrix_divided(2, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
