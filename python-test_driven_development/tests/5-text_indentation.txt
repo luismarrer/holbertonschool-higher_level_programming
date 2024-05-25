@@ -1,0 +1,48 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>>
+========
+CASE 0:
+========
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+<BLANKLINE>
+>>> text_indentation(1)
+Traceback (most recent call last):
+..File "<stdin>", line 1, in <module>
+..File "/home/vagrant/holbertonschool-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 9, in text_indentation
+....raise TypeError("text must be a string")
+TypeError: text must be a string
+
+
+=======
+CASE 1:
+=======
+>>> text_indentation('1', '?')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+===========
+Case 2:
+===========
+>>> text_indentation("Sergio.Vera")
+Sergio.
+<BLANKLINE>
+<BLANKLINE>
+Vera
+
+===========
+CASE 3:
+============
+>>> text_indentation("Sergio. Vera?how are you:John")
+Sergio.
+<BLANKLINE>
+<BLANKLINE>
+ Vera?
+<BLANKLINE>
+<BLANKLINE>
+how are you:
+<BLANKLINE>
+<BLANKLINE>
+John
