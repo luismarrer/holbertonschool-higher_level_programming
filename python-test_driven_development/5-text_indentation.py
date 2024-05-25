@@ -4,6 +4,7 @@ This module provides a function to print a text with 2 new lines
 after each of these characters: ., ? and :
 """
 
+
 def text_indentation(text):
     """
     Prints a text with 2 new lines after each of these characters: ., ? and :
@@ -22,22 +23,17 @@ def text_indentation(text):
         <BLANKLINE>
         I'm fine:
     """
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
 
-    special_chars = {'.', '?', ':'}
-    result = ""
-    i = 0
+    error1 = "text must be a string"
+    if type(text) is not str:
+        raise TypeError(error1)
 
-    while i < len(text):
-        result += text[i]
-        if text[i] in special_chars:
-            result += "\n\n"
-            # Skip any spaces after special characters
-            i += 1
-            while i < len(text) and text[i] == ' ':
-                i += 1
+    brk = True
+    for i in text.strip():
+        if brk and i == ' ':
             continue
-        i += 1
-
-    print(result.strip(), end="")
+        print(i, end="")
+        brk = False
+        if i in ['.', '?', ':']:
+            print("\n")
+            brk = True
