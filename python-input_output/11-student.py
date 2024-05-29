@@ -1,5 +1,20 @@
 #!/usr/bin/python3
 """
+This module defines the Student class,
+which is designed to represent student information
+in a simple school management system.
+It allows for the creation, serialization, and
+updating of student data.
+
+The Student class provides methods to
+serialize student information to a dictionary,
+which can then be used for storage or
+transfer, and to update the student's information
+from a dictionary, mimicking a simple
+form of deserialization. This functionality
+is especially useful in scenarios involving
+JSON data handling, such as loading or
+saving to a database or a file.
 """
 
 
