@@ -1,4 +1,4 @@
-#!/usr/cgbin/python3
+#!/usr/bin/python3
 """
 This module defines the Student class,
 which represents a student
