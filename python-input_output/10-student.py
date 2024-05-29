@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/cgbin/python3
 """
 This module defines the Student class,
 which represents a student
@@ -29,6 +29,19 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
+        """
+        Retrieves a dictionary representation of a Student instance.
+
+        Args:
+            attrs (list, optional): List of
+            attribute names to retrieve if present.
+                                     If None, all attributes are retrieved.
+
+        Returns:
+            dict: A dictionary containing keys
+            and values of specified attributes.
+                  If no attributes are specified, returns all attributes.
+        """
         if isinstance(attrs, list) and all(isinstance(i, str) for i in attrs):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-        return self.__json__()
+        return self.__dict__
