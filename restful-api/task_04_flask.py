@@ -27,14 +27,28 @@ def get_user(username):
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
-    new_user = request.get_json()
-    username = new_user.get("username")
-    if not username:
+    """ adds a new user to the dict """
+    if request.get_json() is None:
+        abort(400, "Not a JSON")
+
+    req_data = request.get_json()
+
+    if "username" not in req_data:
         return jsonify({"error": "Username is required"}), 400
-    if username in users:
-        return jsonify({"error": "User already exists"}), 400
-    users[username] = new_user
-    return jsonify({"message": "User added", "user": new_user}), 201
+
+    users[req_data["username"]] = {
+        "name": req_data["name"],
+        "age": req_data["age"],
+        "city": req_data["city"]
+    }
+
+    output = {
+        "username": req_data["username"],
+        "name": req_data["name"],
+        "age": req_data["age"],
+        "city": req_data["city"]
+    }
+    return jsonify({"message": "User added", "user": output}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
