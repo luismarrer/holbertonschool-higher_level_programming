@@ -1,23 +1,33 @@
 #!/usr/bin/python3
-from flask import Flask, jsonify, request
+""" Nameless Module for Task 4 """
 
+from flask import Flask, jsonify, request, abort
+
+# Step 1
 app = Flask(__name__)
 
 users = {}
 
-@app.route('/')
+
+@app.route("/")
 def home():
+    """ Prints welcome string """
     return "Welcome to the Flask API!"
 
-@app.route('/data')
-def get_data():
-    return jsonify(list(users.key()))
 
-@app.route('/status')
+@app.route("/data")
+def data():
+    """ Returns JSON data """
+    return jsonify(list(users.keys()))
+
+
+@app.route("/status")
 def status():
+    """ Prints OK """
     return "OK"
 
-@app.route('/users/<username>')
+
+@app.route("/users/<username>")
 def users_specific(username):
     """ Get specified """
     if username not in users:
@@ -28,7 +38,8 @@ def users_specific(username):
 
     return jsonify(output)
 
-@app.route('/add_user', methods=['POST'])
+
+@app.route("/add_user", methods=["POST"])
 def add_user():
     """ adds a new user to the dict """
     if request.get_json() is None:
@@ -53,5 +64,7 @@ def add_user():
     }
     return jsonify({"message": "User added", "user": output}), 201
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+# Set debug=True for the server to auto-reload when there are changes
+if __name__ == "__main__":
+    app.run(host='localhost', port=5000, debug=True)
