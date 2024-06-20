@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
-
 """
 This script connects to a MySQL database and
 retrieves all the states from the 'states' table.
 """
+import sys
+import MySQLdb
+
 
 if __name__ == '__main__':
 
