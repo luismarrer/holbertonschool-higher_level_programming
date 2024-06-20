@@ -2,7 +2,8 @@
 """
 This script connects to a MySQL database and
 retrieves all rows from the 'states' table
-that match a given name. The name is passed as a command-line argument.
+that match a given name.
+The name is passed as a command-line argument.
 """
 
 import sys
