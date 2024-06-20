@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # HERE I have to know SQL to grab all states in my database
     query_rows = cur.fetchall()
     for row in query_rows:
-        if row[1][0] == 'N':
-            print(row)
+        # if row[1][0] == 'N':
+        print(row)
     cur.close()
     conn.close()
