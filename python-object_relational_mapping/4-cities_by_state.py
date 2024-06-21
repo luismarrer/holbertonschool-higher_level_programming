@@ -17,12 +17,9 @@ if __name__ == '__main__':
     query = """
     SELECT cities.id, cities.name, states.name
     FROM cities
-    LEFT JOIN states ON states.id = cities.state_id
-    UNION
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    RIGHT JOIN states ON states.id = cities.state_id
-    ORDER BY id ASC;
+    LEFT JOIN states
+    ON cities.state_id=states.id
+    ORDER BY cities.id ASC;
     """
     cur.execute(query)
     # HERE I have to know SQL to grab all states in my database
